@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica Vida Plena | Cuidar de você é o nosso compromisso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--soft:#f3f9fa;--tint:#d9f1f3;--ink:#12324a;--muted:#587386;--teal:#0e9aa7;--line:#dfeaee;--green:#1faa59}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--muted);font-family:Nunito,system-ui,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+h1,h2,h3{font-family:Poppins,system-ui,sans-serif;color:var(--ink);line-height:1.2}
+h2{font-size:clamp(1.7rem,3.4vw,2.2rem);margin-bottom:8px}
+h3{font-size:1.05rem;margin-bottom:4px}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}
+section{padding:80px 0}.soft{background:var(--soft)}
+.lead{max-width:540px;margin-bottom:40px}
+.btn{display:inline-block;background:var(--teal);color:#fff;padding:13px 26px;border-radius:999px;font-weight:700;font-size:15px;border:1.5px solid var(--teal);cursor:pointer;transition:background .2s}
+.btn:hover{background:#0b808b}
+.btn.out{background:transparent;color:var(--teal)}.btn.out:hover{background:var(--tint)}
+.btn.wa{background:var(--green);border-color:var(--green)}.btn.wa:hover{background:#178a48}
+.btn.sm{padding:9px 18px;font-size:14px}
+
+.demo{background:var(--tint);color:var(--ink);font-size:14px;font-weight:600;padding:9px 24px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center}
+.demo a{color:#0a7781;text-decoration:underline;text-underline-offset:3px}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;height:68px;gap:28px}
+.logo{font-family:Poppins,sans-serif;font-weight:700;font-size:1.3rem;color:var(--teal)}
+.nav ul{display:flex;gap:26px;margin-left:auto;font-weight:600;font-size:15px;color:var(--ink)}
+.nav ul a:hover{color:var(--teal)}
+
+.hero{padding:72px 0;background:linear-gradient(180deg,var(--soft),#fff)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:16px}.hero h1 span{color:var(--teal)}
+.hero p{max-width:470px;margin-bottom:28px;font-size:1.05rem}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.art{width:min(380px,100%);margin:auto;display:block;animation:float 4s ease-in-out infinite}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}
+.ecg{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 2.6s linear infinite}
+@keyframes draw{60%{stroke-dashoffset:0}100%{stroke-dashoffset:-420}}
+.beat{transform-origin:center;animation:beat 1.3s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.08)}30%{transform:scale(1)}}
+
+.place-img{position:relative;margin:0;border-radius:18px;overflow:hidden;background:var(--tint);aspect-ratio:16/6;display:grid;place-items:center;color:var(--muted);font-weight:600;text-align:center;padding:24px}
+.place-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.place-img figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 32px 24px;background:linear-gradient(to top,rgba(18,50,74,.7),rgba(18,50,74,0));color:#fff;font-family:Poppins,sans-serif;font-size:1.3rem;font-weight:600}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 22px}
+.card.top{border-top:3px solid var(--teal)}
+.card p{font-size:15px}
+.slot{border:2px dashed var(--teal);background:transparent;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.slot h3{color:var(--teal)}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:var(--tint);border-radius:18px;padding:36px 12px;text-align:center}
+.stats b{display:block;font-family:Poppins,sans-serif;font-size:clamp(2rem,4.5vw,3rem);color:var(--teal);line-height:1.2}
+.stats div+div{border-left:1px solid #b9dde1}
+
+.doc{text-align:center}
+.av{position:relative;width:104px;height:104px;border-radius:50%;background:var(--tint);margin:0 auto 14px;overflow:hidden;display:grid;place-items:center;font-family:Poppins,sans-serif;font-weight:600;font-size:1.6rem;color:var(--teal)}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.doc .esp{color:var(--teal);font-weight:700;font-size:14px;margin-bottom:14px}
+.quote p{font-style:italic;margin-bottom:10px}.quote b{color:var(--ink);font-size:14px}
+
+.place{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:center}
+.info li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}.info b{display:block;color:var(--ink)}
+.map{border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:340px}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.cta{text-align:center;background:var(--soft);border-top:1px solid var(--line)}
+.cta .lead{margin:0 auto 24px}
+footer{padding:26px 24px;font-size:14px;text-align:center}
+footer a{text-decoration:underline;text-underline-offset:3px}
+
+.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.track::-webkit-scrollbar{display:none}
+.pro{flex:0 0 min(260px,78%);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.ph{position:relative;aspect-ratio:4/5;background:var(--tint);display:grid;place-items:center;font-family:Poppins,sans-serif;font-weight:600;font-size:3.4rem;color:var(--teal)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pi{padding:16px 18px 20px}.pi p{color:var(--teal);font-weight:700;font-size:14px;margin-bottom:14px}
+.sl{position:relative}
+.sl-btn{position:absolute;top:calc(50% - 26px);z-index:2;width:52px;height:52px;border-radius:50%;border:0;background:#fff;color:var(--ink);box-shadow:0 4px 16px rgba(18,50,74,.2);display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.sl-btn:hover{background:var(--teal);color:#fff}
+.sl-btn.l{left:-26px}.sl-btn.r{right:-26px}
+@media(max-width:1180px){.sl-btn.l{left:8px}.sl-btn.r{right:8px}.sl-btn{width:44px;height:44px}}
+@media(max-width:860px){
+ .hero .wrap,.place{grid-template-columns:1fr;gap:36px}
+ section{padding:60px 0}.hero{padding:48px 0}
+ .nav ul{display:none}.nav .btn{margin-left:auto}
+ .place-img{aspect-ratio:4/3}
+ .stats{grid-template-columns:1fr;gap:20px}.stats div+div{border-left:0;border-top:1px solid #b9dde1;padding-top:20px}
+}
+@media(prefers-reduced-motion:reduce){.art,.ecg,.beat{animation:none}.ecg{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="demo"><span>Coloque sua clínica aqui. Este é um projeto de demonstração.</span><a href="../index.html#contato">Solicitar orçamento do meu site</a></div>
+
+<header><div class="wrap nav">
+ <a class="logo" href="#">✚ Vida Plena</a>
+ <ul><li><a href="#especialidades">Especialidades</a></li><li><a href="#equipe">Especialistas</a></li><li><a href="#lugar">Onde estamos</a></li></ul>
+ <a class="btn sm wa" href="#" data-wa="Olá! Gostaria de marcar uma consulta.">Marcar consulta</a>
+</div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+ <div>
+  <h1>Cuidar de você é o nosso <span>compromisso</span></h1>
+  <p>Atendimento humano, profissionais dedicados e uma estrutura pensada para o seu conforto, do primeiro contato ao acompanhamento.</p>
+  <div class="row"><a class="btn wa" href="#" data-wa="Olá! Gostaria de marcar uma consulta.">Marcar consulta no WhatsApp</a><a class="btn out" href="#especialidades">Ver especialidades</a></div>
+ </div>
+ <svg class="art" viewBox="0 0 300 260" role="img" aria-label="Coração com linha de batimentos">
+  <circle cx="150" cy="130" r="118" fill="var(--tint)"/>
+  <g class="beat"><path d="M150 205C70 150 60 105 92 82c22-16 46-4 58 16 12-20 36-32 58-16 32 23 22 68-58 123z" fill="var(--teal)"/></g>
+  <path class="ecg" d="M30 140h70l14-38 24 76 18-50 12 12h102" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+ </svg>
+</div></div>
+
+<section style="padding-top:24px"><div class="wrap">
+ <figure class="place-img"><img src="img/clinica.jpg" alt="Fachada e recepção da clínica" onerror="this.remove()"><span>Coloque aqui a foto da sua clínica</span><figcaption>Um espaço pensado para o seu conforto</figcaption></figure>
+</div></section>
+
+<section id="especialidades" class="soft"><div class="wrap">
+ <h2>Nossas especialidades</h2>
+ <p class="lead">Modelo de exemplo: personalize com os serviços da sua clínica.</p>
+ <div class="grid">
+  <article class="card top"><h3>Clínica Geral</h3><p>Check-up completo e acompanhamento contínuo.</p></article>
+  <article class="card top"><h3>Odontologia</h3><p>Limpeza, estética e tratamentos com conforto.</p></article>
+  <article class="card top"><h3>Oftalmologia</h3><p>Exames de vista e cuidado com a saúde ocular.</p></article>
+  <article class="card top"><h3>Psicologia</h3><p>Escuta acolhedora em um espaço seguro.</p></article>
+  <article class="card slot"><h3>Seus serviços aqui</h3><p>Nome e descrição do seu jeito.</p></article>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="stats" id="stats">
+  <div><b data-n="15">0</b>anos de experiência</div>
+  <div><b data-n="20">0</b>profissionais</div>
+  <div><b data-n="8000">0</b>pacientes atendidos</div>
+ </div>
+</div></section>
+
+<section id="equipe" class="soft"><div class="wrap">
+ <h2>Nossos especialistas</h2>
+ <p class="lead">Profissionais que cuidam de você com atenção.</p>
+ <div class="sl"><div class="track" id="track" tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Especialistas da clínica">
+   <article class="pro"><div class="ph">HS<img src="img/dra-helena.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3>Dra. Helena Souza</h3><p>Clínica Geral</p><a class="btn sm wa" href="#" data-wa="Olá! Gostaria de marcar consulta com a Dra. Helena Souza.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">RL<img src="img/dr-rafael.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3>Dr. Rafael Lima</h3><p>Odontologia</p><a class="btn sm wa" href="#" data-wa="Olá! Gostaria de marcar consulta com o Dr. Rafael Lima.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">CT<img src="img/dra-camila.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3>Dra. Camila Torres</h3><p>Oftalmologia</p><a class="btn sm wa" href="#" data-wa="Olá! Gostaria de marcar consulta com a Dra. Camila Torres.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">BN<img src="img/dra-beatriz.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3>Dra. Beatriz Nunes</h3><p>Psicologia</p><a class="btn sm wa" href="#" data-wa="Olá! Gostaria de marcar consulta com a Dra. Beatriz Nunes.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">AM<img src="img/dr-andre.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3>Dr. André Martins</h3><p>Cardiologia</p><a class="btn sm wa" href="#" data-wa="Olá! Gostaria de marcar consulta com o Dr. André Martins.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">LP<img src="img/dra-luiza.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3>Dra. Luiza Prado</h3><p>Dermatologia</p><a class="btn sm wa" href="#" data-wa="Olá! Gostaria de marcar consulta com a Dra. Luiza Prado.">Agendar</a></div></article>
+ </div>
+ <button type="button" class="sl-btn l" id="prev" aria-label="Especialista anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+ <button type="button" class="sl-btn r" id="next" aria-label="Próximo especialista"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <h2>O que dizem nossos pacientes</h2>
+ <p class="lead">Depoimentos fictícios de demonstração.</p>
+ <div class="grid">
+  <article class="card quote"><p>“Atendimento excelente, fui muito bem recebida e sem espera.”</p><b>Mariana C.</b></article>
+  <article class="card quote"><p>“Equipe atenciosa e ambiente super acolhedor. Recomendo!”</p><b>Carlos A.</b></article>
+  <article class="card quote"><p>“Marcar consulta pelo WhatsApp foi rápido e prático.”</p><b>Patrícia S.</b></article>
+ </div>
+</div></section>
+
+<section id="lugar" class="soft"><div class="wrap place">
+ <div>
+  <h2>Onde estamos</h2>
+  <p class="lead" style="margin-bottom:20px">Fácil de chegar, com estacionamento e acesso para todos.</p>
+  <ul class="info"><li><b>Endereço</b>Av. Paulista, 1000, Bela Vista, São Paulo</li><li><b>Horário</b>Segunda a sexta, das 8h às 18h</li><li><b>Telefone</b>(00) 0000-0000</li></ul>
+  <div class="row" style="margin-top:24px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Av.+Paulista+1000+Sao+Paulo">Como chegar</a><a class="btn wa" href="#" data-wa="Olá! Gostaria de marcar uma consulta.">Marcar consulta</a></div>
+ </div>
+ <div class="map"><iframe title="Mapa da clínica" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Paulista+1000+Sao+Paulo&output=embed"></iframe></div>
+</div></section>
+
+<section class="cta"><div class="wrap">
+ <h2>Marque sua consulta</h2>
+ <p class="lead">Atendimento de segunda a sexta, das 8h às 18h. Responda em poucos minutos pelo WhatsApp.</p>
+ <a class="btn wa" href="#" data-wa="Olá! Gostaria de marcar uma consulta.">Marcar consulta no WhatsApp</a>
+</div></section>
+</main>
+
+<footer>Clínica Vida Plena. <a href="../index.html#contato">Projeto de demonstração. Quero um site assim</a></footer>
+
+<script>
+var WHATSAPP="5500000000000"; // troque pelo número da clínica: 55 + DDD + número, sem espaços
+document.querySelectorAll("[data-wa]").forEach(function(a){a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+
+// números contam conforme você rola até eles
+var nums=document.querySelectorAll("[data-n]"),box=document.getElementById("stats");
+function contar(){
+ var r=box.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight-r.top)/(innerHeight*.7)));
+ nums.forEach(function(el){var n=+el.dataset.n;el.textContent=Math.round(n*p).toLocaleString("pt-BR")+(p===1&&n>=1000?"+":"")});
+}
+addEventListener("scroll",contar,{passive:true});addEventListener("resize",contar);contar();
+
+// especialistas: banners que passam sozinhos (pausam ao passar o mouse ou tocar)
+var tr=document.getElementById("track"),auto,reduz=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function mover(d){
+ var passo=tr.querySelector(".pro").offsetWidth+20,max=tr.scrollWidth-tr.clientWidth,alvo=tr.scrollLeft+d*passo;
+ if(alvo>max+4)alvo=0;else if(alvo<-4)alvo=max;
+ tr.scrollTo({left:alvo,behavior:"smooth"});
+}
+function parar(){clearInterval(auto)}
+function tocar(){if(reduz)return;parar();auto=setInterval(function(){mover(1)},3500)}
+document.getElementById("prev").onclick=function(){mover(-1)};
+document.getElementById("next").onclick=function(){mover(1)};
+["mouseenter","focusin","touchstart"].forEach(function(e){tr.parentNode.addEventListener(e,parar,{passive:true})});
+["mouseleave","focusout","touchend"].forEach(function(e){tr.parentNode.addEventListener(e,tocar,{passive:true})});
+tocar();
+</script>
+</body>
+</html>

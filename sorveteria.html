@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cremosa | Sorveteria artesanal</title>
+<meta name="description" content="Sorvetes artesanais em pequenos lotes. Conheça a edição limitada 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Pacifico&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fbf6ee;--sand:#f0e4d0;--brown:#2b1a12;--red:#b3141f;--muted:#6d5a4c;--line:#e6d8c2}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:"Nunito Sans",system-ui,sans-serif;background:var(--cream);color:var(--muted);line-height:1.65}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;color:var(--brown);line-height:1.12}
+h2{font-size:clamp(28px,3.6vw,38px);margin-bottom:10px}
+h3{font-size:19px;margin-bottom:4px}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;font-size:15px;background:var(--red);color:#fff;border:1.5px solid var(--red);cursor:pointer;transition:background .2s}
+.btn:hover{background:#951019}
+.btn.out{background:transparent;color:var(--brown);border-color:var(--brown)}.btn.out:hover{background:var(--brown);color:#fff}
+.btn.sm{padding:9px 18px;font-size:14px}
+
+header{position:sticky;top:0;z-index:10;background:var(--cream);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;height:70px;gap:32px}
+.logo{font-family:Pacifico,cursive;font-size:26px;color:var(--red)}
+.nav ul{display:flex;gap:28px;margin-left:auto;font-weight:600;font-size:15px;color:var(--brown)}
+.nav ul a:hover{color:var(--red)}
+
+.hero{padding:56px 0 0;overflow:hidden}
+.hero .top{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center}
+.hero h1{font-size:clamp(42px,6vw,72px);letter-spacing:-.02em;margin-bottom:16px}
+.hero .tag{font-size:20px;color:var(--red);font-weight:600;margin-bottom:28px;max-width:400px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.stage{position:relative;display:grid;place-items:center;min-height:440px}
+.stage:before{content:"";position:absolute;width:min(420px,88%);aspect-ratio:1;border-radius:50%;background:var(--sand)}
+.stage svg.big{position:relative;width:min(380px,82%);height:auto}
+.badge{position:absolute;right:4%;bottom:14%;background:var(--brown);color:#fff;border-radius:14px;padding:12px 18px;font-size:14px;line-height:1.35}
+.badge b{display:block;font-family:"Playfair Display",serif;font-size:22px}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:16px 16px 0 0;border-bottom:0}
+.feat article{padding:22px 24px;display:flex;gap:16px;align-items:center}
+.feat article+article{border-left:1px solid var(--line)}
+.feat svg{width:54px;height:54px;flex:none}
+.feat p{font-size:14px;line-height:1.45}
+.price{color:var(--brown);font-weight:700;font-size:15px;margin-top:4px}
+
+.demo{background:var(--red);color:#fff;font-size:14px;font-weight:600;padding:9px 24px;display:flex;justify-content:center;align-items:center;gap:16px;flex-wrap:wrap;text-align:center}
+.demo a{text-decoration:underline;text-underline-offset:3px}
+.banner{position:relative;margin:0;border-radius:18px 18px 0 0;overflow:hidden;background:var(--sand);aspect-ratio:16/7;display:grid;place-items:center}
+.banner>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner svg.fb{height:92%;width:auto}
+.banner figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px 36px 32px;background:linear-gradient(to top,rgba(43,26,18,.82),rgba(43,26,18,0))}
+.banner h1{color:#fff;font-size:clamp(32px,4.6vw,54px);margin-bottom:8px}
+.banner .tag{color:#f3e6d2;font-size:18px;margin-bottom:20px;max-width:none}
+.banner .btn.out{color:#fff;border-color:#fff}.banner .btn.out:hover{background:#fff;color:var(--brown)}
+.hero{padding-top:32px}.feat{margin-top:0;border-radius:0}
+.promos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:56px}
+.promo{position:relative;overflow:hidden;border-radius:14px;min-height:230px;display:flex;align-items:flex-end;color:#fff;background:var(--c,var(--brown))}
+.promo>img,.wide>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.promo:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(43,26,18,.7),rgba(43,26,18,0) 65%)}
+.promo div{position:relative;z-index:1;padding:22px}
+.promo h3{color:#fff;font-size:24px}.promo p{font-size:14px;color:#f3e6d2;margin:4px 0 14px;line-height:1.5}
+.promo .btn.out,.wide .btn.out{color:#fff;border-color:#fff}.promo:hover .btn.out{background:#fff;color:var(--brown)}
+.wb{padding-bottom:88px}
+.wide{position:relative;overflow:hidden;border-radius:18px;min-height:240px;background:var(--red);color:#fff;display:flex;align-items:center}
+.wide:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(43,26,18,.78),rgba(43,26,18,0) 75%)}
+.wide div{position:relative;z-index:2;padding:40px;max-width:520px}
+.wide h2{color:#fff}.wide p{color:#f3e6d2;margin-bottom:20px}
+.wide .btn{background:#fff;color:var(--red);border-color:#fff}.wide .btn:hover{background:var(--sand)}
+section.blk{padding:88px 0}
+.alt{background:#fff;border-block:1px solid var(--line)}
+.lead{max-width:540px;margin-bottom:44px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:center}
+.card svg{width:72px;height:72px}
+.card p{font-size:14px;line-height:1.5;margin-bottom:10px}
+.card .row2{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.story p+p{margin-top:14px}
+.shops{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.shops li{padding:24px 24px 24px 0;border-bottom:1px solid var(--line)}
+.shops li:not(:nth-child(3n+1)){padding-left:24px;border-left:1px solid var(--line)}
+.shops p{font-size:15px}
+footer{background:var(--brown);color:#cdbfb2;padding:32px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+footer .logo{font-size:22px;color:#fff}
+
+@media(max-width:860px){
+ .hero .top,.story{grid-template-columns:1fr;gap:32px}
+ .stage{min-height:340px}
+ .feat,.grid,.shops{grid-template-columns:1fr}
+ .feat article+article{border-left:0;border-top:1px solid var(--line)}
+ .shops li,.shops li:not(:nth-child(3n+1)){padding:20px 0;border-left:0}
+ section.blk{padding:64px 0}
+ .nav ul{display:none}.nav .btn{margin-left:auto}
+ .promos{grid-template-columns:1fr}
+ .wide div{padding:28px 24px}
+ .banner{aspect-ratio:auto;display:block}
+ .banner>img,.banner svg.fb{position:static;display:block;width:100%;height:auto;max-height:320px;margin:auto}
+ .banner svg.fb{width:auto;height:280px}
+ .banner figcaption{position:static;background:var(--brown);padding:28px 24px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="sc" viewBox="0 0 100 100"><polygon points="30,52 70,52 50,95" fill="#e3b977"/><circle cx="50" cy="38" r="25" fill="var(--c)"/><ellipse cx="41" cy="29" rx="8" ry="5" fill="#fff" opacity=".3"/></symbol></svg>
+
+<div class="demo"><span>Coloque seu produto aqui. Este é um projeto de demonstração.</span><a href="../index.html#contato">Solicitar orçamento do meu site</a></div>
+
+<header><div class="wrap nav">
+ <a class="logo" href="#">Cremosa</a>
+ <ul><li><a href="#cardapio">Cardápio</a></li><li><a href="#historia">Nossa história</a></li><li><a href="#lojas">Lojas</a></li></ul>
+ <a class="btn sm" href="#lojas">Peça aqui</a>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+ <figure class="banner">
+  <img src="img/produto.jpg" alt="Produto em destaque" onerror="this.remove()">
+  <svg class="fb" viewBox="0 0 400 440" role="img" aria-label="Copo de sorvete com três bolas: pistache, morango e chocolate">
+    <ellipse cx="200" cy="420" rx="110" ry="10" fill="#2b1a12" opacity=".15"/>
+    <rect x="268" y="96" width="14" height="110" rx="6" transform="rotate(18 275 150)" fill="#e3b977"/>
+    <circle cx="148" cy="226" r="54" fill="#b9c98a"/>
+    <circle cx="252" cy="226" r="54" fill="#e8a4a4"/>
+    <circle cx="200" cy="172" r="58" fill="#6b3f2a"/>
+    <ellipse cx="180" cy="152" rx="16" ry="9" fill="#fff" opacity=".22"/>
+    <path d="M150 160q22 18 50 6t52 10" stroke="#c78a4b" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <rect x="100" y="246" width="200" height="16" rx="8" fill="#f3e6d2"/>
+    <path d="M108 262h184l-20 138q-2 14-16 14H144q-14 0-16-14z" fill="#b3141f"/>
+    <path d="M119 320h162l-5 36H124z" fill="#fbf6ee"/>
+    <text x="200" y="346" text-anchor="middle" font-family="Pacifico,cursive" font-size="24" fill="#b3141f">Cremosa</text>
+   </svg>
+  <figcaption>
+   <h1>Edição Limitada 2026</h1>
+   <p class="tag">A vida pode ser doce em todas as estações.</p>
+   <div class="row"><a class="btn" href="#cardapio">Ver cardápio</a><a class="btn out" href="#lojas">Peça aqui</a></div>
+  </figcaption>
+ </figure>
+ <div class="feat">
+  <article><svg style="--c:#b9c98a"><use href="#sc"/></svg><div><h3>Pistache tostado</h3><p>Pistache siciliano com toque de sal.</p><div class="price">R$ 26,00</div></div></article>
+  <article><svg style="--c:#e8a4a4"><use href="#sc"/></svg><div><h3>Morango e mascarpone</h3><p>Morango fresco e creme de queijo.</p><div class="price">R$ 24,00</div></div></article>
+  <article><svg style="--c:#6b3f2a"><use href="#sc"/></svg><div><h3>Chocolate 70%</h3><p>Cacau intenso, pouco açúcar.</p><div class="price">R$ 24,00</div></div></article>
+ </div>
+</div></section>
+
+<section class="wrap promos" aria-label="Destaques">
+ <a class="promo" href="#lojas" style="--c:#b3141f"><img src="img/banner-delivery.jpg" alt="" onerror="this.remove()"><div><h3>Delivery</h3><p>Peça pelo WhatsApp e receba em casa.</p><span class="btn sm out">Peça aqui</span></div></a>
+ <a class="promo" href="#cardapio" style="--c:#2b1a12"><img src="img/banner-sorvetes.jpg" alt="" onerror="this.remove()"><div><h3>Sorvetes</h3><p>Conheça todos os nossos sabores.</p><span class="btn sm out">Ver cardápio</span></div></a>
+ <a class="promo" href="../index.html#contato" style="--c:#8a5a3c"><img src="img/banner-eventos.jpg" alt="" onerror="this.remove()"><div><h3>Eventos e empresas</h3><p>Sorvete para festas, buffets e restaurantes.</p><span class="btn sm out">Solicitar orçamento</span></div></a>
+</section>
+
+<section class="blk" id="cardapio"><div class="wrap">
+ <h2>Cardápio</h2>
+ <p class="lead">Sorvetes feitos em pequenos lotes, com ingredientes selecionados.</p>
+ <div class="grid">
+  <article class="card"><svg style="--c:#f2e3a8"><use href="#sc"/></svg><div><h3>Baunilha de Madagascar</h3><p>Cremosa, com grãos de baunilha.</p><div class="row2"><span class="price">R$ 18,00</span><a class="btn sm out" href="#lojas">Ver detalhes</a></div></div></article>
+  <article class="card"><svg style="--c:#d9a066"><use href="#sc"/></svg><div><h3>Doce de leite</h3><p>Com ribbons de doce de leite.</p><div class="row2"><span class="price">R$ 18,00</span><a class="btn sm out" href="#lojas">Ver detalhes</a></div></div></article>
+  <article class="card"><svg style="--c:#e9e08a"><use href="#sc"/></svg><div><h3>Limão siciliano</h3><p>Leve, refrescante e cítrico.</p><div class="row2"><span class="price">R$ 16,00</span><a class="btn sm out" href="#lojas">Ver detalhes</a></div></div></article>
+  <article class="card"><svg style="--c:#8a2b3a"><use href="#sc"/></svg><div><h3>Frutas vermelhas</h3><p>Sorbet com amora e framboesa.</p><div class="row2"><span class="price">R$ 20,00</span><a class="btn sm out" href="#lojas">Ver detalhes</a></div></div></article>
+  <article class="card"><svg style="--c:#c9a27a"><use href="#sc"/></svg><div><h3>Café com avelã</h3><p>Café especial e avelã torrada.</p><div class="row2"><span class="price">R$ 20,00</span><a class="btn sm out" href="#lojas">Ver detalhes</a></div></div></article>
+  <article class="card"><svg style="--c:#a9c7a0"><use href="#sc"/></svg><div><h3>Coco queimado</h3><p>Coco fresco caramelizado.</p><div class="row2"><span class="price">R$ 18,00</span><a class="btn sm out" href="#lojas">Ver detalhes</a></div></div></article>
+ </div>
+</div></section>
+
+<section class="wrap wb" aria-label="Promoção">
+ <div class="wide"><img src="img/banner-largo.jpg" alt="" onerror="this.remove()"><div><h2>Monte o seu pote</h2><p>Pote de 500 ml com até dois sabores, por R$ 38,00.</p><a class="btn" href="#lojas">Quero o meu</a></div></div>
+</section>
+
+<section class="blk alt" id="historia"><div class="wrap story">
+ <div><h2>Nossa história</h2></div>
+ <div>
+  <p>A Cremosa começou em uma cozinha pequena, com receitas de família e a vontade de fazer sorvete de verdade.</p>
+  <p>Hoje seguimos o mesmo caminho: poucos ingredientes, produção em pequenos lotes e sabores que mudam conforme a estação.</p>
+ </div>
+</div></section>
+
+<section class="blk" id="lojas"><div class="wrap">
+ <h2>Lojas</h2>
+ <p class="lead">Venha nos visitar ou peça pelo WhatsApp.</p>
+ <ul class="shops">
+  <li><h3>Centro</h3><p>Rua das Flores, 120<br>Todos os dias, 11h às 22h</p></li>
+  <li><h3>Shopping</h3><p>Piso 1, próximo à praça de alimentação<br>Todos os dias, 10h às 22h</p></li>
+  <li><h3>Delivery</h3><p>Pedidos pelo WhatsApp<br>Todos os dias, 12h às 21h</p></li>
+ </ul>
+</div></section>
+</main>
+
+<footer><div class="wrap"><a class="logo" href="#">Cremosa</a><a href="../index.html#contato">Projeto de demonstração. Quero um site assim</a></div></footer>
+</body>
+</html>

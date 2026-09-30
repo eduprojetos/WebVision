@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Horizonte Imóveis | Conceito de demonstração</title>
+<meta name="description" content="Conceito de site institucional para imobiliária.">
+<style>
+:root{--navy:#14233f;--ink:#1c2a44;--paper:#fbfaf7;--mist:#eef1f6;--gold:#b89a5e;--line:#e2e5ea;--slate:#5a6477}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+.wrap{max-width:1120px;margin:auto;padding:0 28px}
+.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+a:focus-visible,summary:focus-visible,select:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+header{background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:32px;height:76px}
+.logo{font-size:23px;color:var(--navy)}.logo span{color:var(--gold)}
+.nav ul{display:flex;gap:28px;margin-left:auto;font-size:15px;color:var(--slate)}.nav ul a:hover{color:var(--navy)}
+.btn{display:inline-block;padding:14px 28px;background:var(--navy);color:#fff;font-weight:600;font-size:15px;border-radius:3px;border:1px solid var(--navy);transition:background .2s}
+.btn:hover{background:#1f3560}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#16110a}.btn.gold:hover{background:#c7aa6e}
+.btn.line{background:transparent;color:var(--navy)}.btn.line:hover{background:var(--mist)}
+
+.hero{padding:72px 0 120px;background:linear-gradient(180deg,#fff,var(--mist))}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:center}
+h1{font-size:clamp(36px,5vw,58px);line-height:1.1;font-weight:500;color:var(--navy);letter-spacing:-.5px;margin-bottom:22px}
+.lead{color:var(--slate);font-size:18px;max-width:500px;margin-bottom:30px}
+.who{padding-top:20px;border-top:1px solid var(--line);max-width:380px;margin-top:38px}
+.who strong{display:block;font-size:19px;font-weight:500;color:var(--navy)}.who span{color:var(--slate);font-size:14px}
+
+.retrato{position:relative;max-width:340px;margin-left:auto;aspect-ratio:4/5}
+.retrato:before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--gold)}
+.foto{position:relative;height:100%;background:#dfe5ef;overflow:hidden;display:flex;align-items:flex-end}
+.foto svg,.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.foto small{position:relative;width:100%;padding:14px;text-align:center;font-size:14px;color:var(--navy);background:linear-gradient(transparent,#ffffffdd)}
+
+/* busca (apenas visual) */
+.busca{position:relative;z-index:2;margin-top:-64px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 50px #14233f1a;padding:26px;display:grid;grid-template-columns:repeat(3,1fr) auto;gap:16px;align-items:end}
+.busca label{font-size:13px;color:var(--slate);display:block;margin-bottom:6px}
+.busca select{width:100%;padding:13px 12px;border:1px solid var(--line);background:var(--paper);font:inherit;color:var(--ink)}
+
+section{padding:88px 0}
+h2{font-size:clamp(28px,3.6vw,40px);line-height:1.15;font-weight:500;color:var(--navy);margin-bottom:12px}
+.sub{color:var(--slate);max-width:540px;margin-bottom:44px}
+.note{color:var(--slate);font-size:13px;margin-top:22px}
+
+.imoveis{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.imovel{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
+.thumb{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#dfe5ef,#cfd8e6);display:grid;place-items:center;color:#8d9bb3;font-size:14px}
+.thumb svg{width:64px;height:64px;margin-bottom:6px}.thumb div{text-align:center}
+.thumb em{position:absolute;top:14px;left:14px;font-style:normal;font-size:12px;font-weight:600;background:var(--navy);color:#fff;padding:3px 10px}
+.imovel .in{padding:22px;display:flex;flex-direction:column;gap:6px;flex:1}
+.imovel h3{font-size:20px;font-weight:500;color:var(--navy)}
+.imovel p{color:var(--slate);font-size:14px}
+.feat{display:flex;gap:16px;color:var(--slate);font-size:14px;padding:12px 0;border-top:1px solid var(--line);margin-top:8px}
+.preco{font-size:26px;color:var(--navy);margin-top:auto}
+
+.sobre{background:var(--mist)}
+.sb{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-bottom:48px}
+.sb p{color:var(--slate);margin-bottom:14px}
+.mvv div{padding:18px 0;border-top:1px solid #d3d9e3}
+.mvv dt{font-size:20px;color:var(--navy);margin-bottom:4px}.mvv dd{color:var(--slate);font-size:15px}
+.dif{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:48px}
+.dif li{background:#fff;border:1px solid var(--line);border-top:2px solid var(--gold);padding:22px}
+.dif b{display:block;color:var(--navy);font-weight:600;margin-bottom:4px}.dif span{color:var(--slate);font-size:14px}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;padding-top:40px;border-top:1px solid #d3d9e3}
+.nums b{display:block;font-size:clamp(36px,5vw,54px);font-weight:500;color:var(--navy);line-height:1.1}
+.nums span{color:var(--slate);font-size:15px}
+.dep{background:#fff}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:44px}
+.quotes blockquote{font-size:19px;line-height:1.5;color:var(--navy);padding-left:20px;border-left:2px solid var(--gold)}
+.quotes small{display:block;margin-top:14px;color:var(--slate);font-size:13px;font-family:system-ui,sans-serif}
+
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-size:19px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--gold);font-size:24px;line-height:1}
+details[open] summary:after{content:"−"}
+details p{color:var(--slate);margin-top:12px}
+
+.info{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.box{background:#fff;border:1px solid var(--line);padding:32px}
+.box h3{font-size:22px;font-weight:500;color:var(--navy);margin-bottom:14px}
+.hrs li{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);color:var(--slate)}
+.hrs li:last-child{border-bottom:0}.hrs b{font-weight:500;color:var(--ink)}
+.box address{font-style:normal;color:var(--ink);font-size:18px;margin-bottom:22px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{color:#fff}.cta p{color:#c3cbdb;max-width:500px;margin:0 auto 30px}.cta .row{justify-content:center}
+footer{padding:28px 0;color:var(--slate);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media(max-width:900px){
+ .hero .wrap,.info{grid-template-columns:1fr;gap:44px}.retrato{margin:0 auto 18px}
+ .busca{grid-template-columns:1fr 1fr}.imoveis,.quotes{grid-template-columns:1fr}.quotes{gap:32px}
+ .nav ul{display:none}.nav .btn{margin-left:auto}
+ .sb{grid-template-columns:1fr;gap:32px}.dif,.nums{grid-template-columns:1fr 1fr}
+ .hero{padding:56px 0 100px}section{padding:64px 0}.box{padding:24px}
+}
+@media(max-width:560px){.busca{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+ <a class="logo serif" href="#">Horizonte <span>Imóveis</span></a>
+ <ul><li><a href="#imoveis">Imóveis</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#depoimentos">Depoimentos</a></li><li><a href="#duvidas">Dúvidas</a></li><li><a href="#contato">Contato</a></li></ul>
+ <a class="btn" href="#contato">Falar com o corretor</a>
+</div></header>
+
+<main>
+<section class="hero" style="padding-bottom:120px"><div class="wrap">
+ <div>
+  <h1 class="serif">O imóvel certo para a sua próxima fase.</h1>
+  <p class="lead">Compra, venda e aluguel com atendimento próximo, visitas marcadas no seu horário e orientação em cada etapa.</p>
+  <a class="btn gold" href="#imoveis">Ver imóveis</a>
+  <div class="who"><strong class="serif">Nome Sobrenome</strong><span>Corretor(a) de imóveis · CRECI 00000</span></div>
+ </div>
+ <div class="retrato">
+  <div class="foto">
+   <!-- Para usar a foto real: apague o bloco <svg> e coloque <img src="foto-perfil.jpg" alt="Retrato de Nome Sobrenome"> -->
+   <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Silhueta de retrato profissional">
+    <rect width="400" height="500" fill="#dfe5ef"/>
+    <circle cx="200" cy="195" r="72" fill="#14233f" opacity=".85"/>
+    <path d="M50 500C50 385 122 322 200 322S350 385 350 500Z" fill="#14233f" opacity=".85"/>
+   </svg>
+   <small>Sua foto aqui</small>
+  </div>
+ </div>
+</div></section>
+
+<div class="wrap">
+ <div class="busca" role="search" aria-label="Busca de imóveis (demonstração)">
+  <div><label for="b1">Tipo de imóvel</label><select id="b1"><option>Apartamento</option><option>Casa</option><option>Terreno</option><option>Comercial</option></select></div>
+  <div><label for="b2">Finalidade</label><select id="b2"><option>Comprar</option><option>Alugar</option></select></div>
+  <div><label for="b3">Bairro</label><select id="b3"><option>Todos os bairros</option><option>Bairro Exemplo</option></select></div>
+  <a class="btn" href="#imoveis">Buscar imóveis</a>
+ </div>
+</div>
+
+<section id="imoveis"><div class="wrap">
+ <h2 class="serif">Imóveis em destaque</h2>
+ <p class="sub">Uma seleção de imóveis para você conhecer. Fale com o corretor para agendar uma visita.</p>
+ <div class="imoveis">
+  <article class="imovel"><div class="thumb"><em>Venda</em><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Foto do imóvel</div></div>
+   <div class="in"><h3 class="serif">Apartamento com varanda</h3><p>Bairro Exemplo, Sua Cidade</p><div class="feat"><span>3 quartos</span><span>2 vagas</span><span>98 m²</span></div><div class="preco serif">R$ 650.000</div></div></article>
+  <article class="imovel"><div class="thumb"><em>Venda</em><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Foto do imóvel</div></div>
+   <div class="in"><h3 class="serif">Casa com quintal</h3><p>Bairro Exemplo, Sua Cidade</p><div class="feat"><span>4 quartos</span><span>3 vagas</span><span>210 m²</span></div><div class="preco serif">R$ 980.000</div></div></article>
+  <article class="imovel"><div class="thumb"><em>Aluguel</em><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Foto do imóvel</div></div>
+   <div class="in"><h3 class="serif">Apartamento compacto</h3><p>Bairro Exemplo, Sua Cidade</p><div class="feat"><span>2 quartos</span><span>1 vaga</span><span>62 m²</span></div><div class="preco serif">R$ 2.400 <span style="font-size:15px;color:var(--slate)">/mês</span></div></div></article>
+ </div>
+ <p class="note">Imóveis, endereços e valores de exemplo para esta demonstração.</p>
+</div></section>
+
+<section class="sobre" id="sobre"><div class="wrap">
+ <div class="sb">
+  <div>
+   <h2 class="serif">Sobre nós</h2>
+   <!-- Troque estes textos pela história real da empresa -->
+   <p>A Horizonte Imóveis atua na compra, venda e aluguel de imóveis com atendimento próximo e transparente.</p>
+   <p>Cada cliente é acompanhado de perto, do primeiro contato até a entrega das chaves.</p>
+  </div>
+  <dl class="mvv">
+   <div><dt class="serif">Missão</dt><dd>Ajudar pessoas a encontrar o imóvel certo, com segurança e clareza em cada etapa.</dd></div>
+   <div><dt class="serif">Visão</dt><dd>Ser referência em atendimento imobiliário na nossa região.</dd></div>
+   <div><dt class="serif">Valores</dt><dd>Transparência, respeito, responsabilidade e compromisso com o cliente.</dd></div>
+  </dl>
+ </div>
+ <ul class="dif">
+  <li><b>Atendimento próximo</b><span>Acompanhamento do início ao fim.</span></li>
+  <li><b>Transparência</b><span>Informações claras sobre valores e documentos.</span></li>
+  <li><b>Segurança</b><span>Orientação em cada etapa da negociação.</span></li>
+  <li><b>Agilidade</b><span>Visitas marcadas no seu horário.</span></li>
+ </ul>
+ <ul class="nums">
+  <li><b class="serif" data-alvo="10" data-pref="+">+10</b><span>Anos de mercado</span></li>
+  <li><b class="serif" data-alvo="500" data-pref="+">+500</b><span>Imóveis negociados</span></li>
+  <li><b class="serif" data-alvo="800" data-pref="+">+800</b><span>Clientes atendidos</span></li>
+  <li><b class="serif" data-alvo="25" data-pref="+">+25</b><span>Bairros atendidos</span></li>
+ </ul>
+ <p class="note">Números de exemplo para esta demonstração.</p>
+</div></section>
+
+<section class="dep" id="depoimentos"><div class="wrap">
+ <h2 class="serif">O que os clientes dizem</h2>
+ <p class="sub">Espaço para depoimentos reais de clientes da imobiliária.</p>
+ <div class="quotes">
+  <blockquote class="serif">“Fui atendido com atenção do início ao fim e entendi cada etapa da compra.”<small>Depoimento de exemplo</small></blockquote>
+  <blockquote class="serif">“As visitas foram marcadas no meu horário, sem correria.”<small>Depoimento de exemplo</small></blockquote>
+  <blockquote class="serif">“Comunicação clara e retorno rápido em todas as dúvidas.”<small>Depoimento de exemplo</small></blockquote>
+ </div>
+</div></section>
+
+<section id="duvidas"><div class="wrap">
+ <h2 class="serif">Dúvidas frequentes</h2>
+ <div class="faq" style="margin-top:32px">
+  <details><summary class="serif">Como agendo uma visita?</summary><p>Chame no WhatsApp, escolha o imóvel e combine o melhor dia e horário.</p></details>
+  <details><summary class="serif">Vocês ajudam com o financiamento?</summary><p>Informe aqui como a imobiliária orienta sobre financiamento e documentação.</p></details>
+  <details><summary class="serif">Quais documentos preciso?</summary><p>Informe aqui a lista de documentos para compra, venda ou aluguel.</p></details>
+  <details><summary class="serif">Posso anunciar meu imóvel?</summary><p>Sim. Fale com o corretor para avaliar e divulgar o seu imóvel.</p></details>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap info">
+ <div class="box">
+  <h3 class="serif">Horário de atendimento</h3>
+  <ul class="hrs"><li><b>Segunda a sexta</b><span>9h às 18h</span></li><li><b>Sábado</b><span>9h às 13h</span></li><li><b>Domingo</b><span>Fechado</span></li></ul>
+ </div>
+ <div class="box">
+  <h3 class="serif">Endereço</h3>
+  <address>Rua Exemplo, 123 — Centro<br>Sua Cidade / UF</address>
+  <div class="row">
+   <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Exemplo+123+Sua+Cidade" target="_blank" rel="noopener">Como chegar</a>
+   <a class="btn line" href="tel:+5500000000000">(00) 00000-0000</a>
+  </div>
+ </div>
+</div></section>
+
+<section class="cta" id="contato"><div class="wrap">
+ <h2 class="serif">Vamos encontrar o seu imóvel?</h2>
+ <p>Conte o que você procura e receba uma seleção de imóveis para visitar.</p>
+ <div class="row">
+  <!-- Troque o número: 55 + DDD + número, sem espaços -->
+  <a class="btn gold" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Horizonte Imóveis</span><span>Conceito de demonstração criado pela WebVision</span></div></footer>
+<script src="imobiliaria.js"></script>
+</body>
+</html>

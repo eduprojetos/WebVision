@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Royal Barber Club | Conceito de demonstração</title>
+<meta name="description" content="Conceito de landing page para barbearia premium.">
+<style>
+:root{--black:#0b0b0c;--coal:#151517;--line:#2a2a2d;--gold:#c9a45c;--ivory:#efe8da;--mute:#9a9486}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--black);color:var(--ivory);line-height:1.65}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+.wrap{max-width:1080px;margin:auto;padding:0 28px}
+.serif{font-family:"Didot","Bodoni MT","Playfair Display",Georgia,serif}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+header{border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:32px;height:76px}
+.logo{font-size:22px}.logo span{color:var(--gold)}
+.nav ul{display:flex;gap:28px;margin-left:auto;font-size:15px;color:var(--mute)}.nav ul a:hover{color:var(--ivory)}
+.btn{display:inline-block;padding:14px 28px;background:var(--gold);color:#16110a;font-weight:600;font-size:15px;transition:background .2s}
+.btn:hover{background:#dab96f}
+.btn.line{background:transparent;color:var(--ivory);border:1px solid #ffffff44}.btn.line:hover{border-color:var(--gold);background:transparent}
+
+.hero{padding:96px 0 104px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:center}
+h1{font-size:clamp(40px,6vw,72px);line-height:1.04;font-weight:500;letter-spacing:-1px;margin-bottom:24px}
+.lead{color:var(--mute);font-size:18px;max-width:480px;margin-bottom:36px}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+/* poste de barbeiro: listras em ouro e preto */
+.pole{justify-self:center;width:84px;height:380px;border:2px solid var(--gold);border-radius:42px;background:repeating-linear-gradient(-45deg,var(--gold) 0 18px,var(--black) 18px 36px,var(--ivory) 36px 54px,var(--black) 54px 72px);box-shadow:0 0 0 8px var(--black),0 0 0 9px var(--line)}
+
+section{padding:88px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(28px,3.6vw,42px);line-height:1.15;font-weight:500;margin-bottom:12px}
+.sub{color:var(--mute);max-width:520px;margin-bottom:44px}
+.note{color:var(--mute);font-size:13px;margin-top:22px}
+
+
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.sv{position:relative;display:flex;flex-direction:column;gap:10px;padding:34px 34px 30px;background:var(--coal);border:1px solid var(--line);border-top:2px solid var(--gold);transition:border-color .25s,transform .25s}
+.sv:hover{border-color:var(--gold);transform:translateY(-4px)}
+.sv h3{font-size:26px;font-weight:500}
+.sv p{color:var(--mute);font-size:15px;flex:1}
+.sv .pr{display:flex;align-items:baseline;gap:6px;margin-top:14px;color:var(--gold)}
+.sv .pr small{font-size:20px}.sv .pr b{font-size:56px;font-weight:500;line-height:1}
+.sv .go{align-self:flex-start;margin-top:8px;font-size:14px;color:var(--ivory);border-bottom:1px solid var(--gold);padding-bottom:2px}
+.sv .go:hover{color:var(--gold)}
+.sv.top{background:linear-gradient(160deg,#241d0e,var(--coal) 60%);border-color:var(--gold)}
+.sv .tag{position:absolute;top:18px;right:18px;font-size:12px;background:var(--gold);color:#16110a;padding:3px 10px;font-weight:600}
+
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.quotes blockquote{font-size:19px;line-height:1.5;padding-left:20px;border-left:2px solid var(--gold)}
+.quotes small{display:block;margin-top:14px;color:var(--mute);font-size:13px;font-family:system-ui,sans-serif}
+
+
+.box{background:var(--coal);border:1px solid var(--line);padding:32px}
+.info h3{font-size:22px;font-weight:500;margin-bottom:14px}
+.hrs li{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;margin:0 -16px;border-bottom:1px solid var(--line);color:var(--mute)}
+.hrs li:last-child{border-bottom:0}
+.hrs b{font-weight:500;color:var(--ivory)}
+.hrs li.hoje{background:#241d0e;border-left:2px solid var(--gold);color:var(--ivory)}
+.hrs li.hoje b{color:var(--gold)}
+.hrs li.hoje b:after{content:"Hoje";margin-left:10px;font-size:12px;background:var(--gold);color:#16110a;padding:2px 8px;font-weight:600}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.loc{display:flex;flex-direction:column;gap:22px}
+.mapa{position:relative;flex:1;min-height:200px;display:grid;place-items:center;background:linear-gradient(#ffffff0d 1px,transparent 1px) 0 0/40px 40px,linear-gradient(90deg,#ffffff0d 1px,transparent 1px) 0 0/40px 40px,#101012;border:1px solid var(--line)}
+.mapa small{position:absolute;bottom:10px;left:12px;color:var(--mute);font-size:13px}
+.pin{width:22px;height:22px;background:var(--gold);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 0 0 8px #c9a45c33}
+.info address{font-style:normal;color:var(--ivory);font-size:18px}
+
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--gold);font-size:24px;line-height:1}
+details[open] summary:after{content:"−"}
+details p{color:var(--mute);margin-top:12px}
+
+.cta{text-align:center;background:var(--coal)}
+.cta p{color:var(--mute);max-width:480px;margin:0 auto 30px}
+.cta .row{justify-content:center}
+footer{padding:28px 0;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media(max-width:860px){
+ .hero .wrap,.info{grid-template-columns:1fr;gap:44px}.quotes{grid-template-columns:1fr;gap:32px}
+ .pole{width:64px;height:120px;border-radius:32px;justify-self:start}
+ .nav ul{display:none}.nav .btn{margin-left:auto}
+ .cards{grid-template-columns:1fr}.box{padding:24px}
+ .hero{padding:64px 0}section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+ <a class="logo serif" href="#">Royal <span>Barber</span> Club</a>
+ <ul><li><a href="#servicos">Serviços</a></li><li><a href="#depoimentos">Depoimentos</a></li><li><a href="#horarios">Horários</a></li><li><a href="#faq">Dúvidas</a></li></ul>
+ <a class="btn" href="#agendar">Agendar horário</a>
+</div></header>
+
+<main>
+<section class="hero" style="border-top:0"><div class="wrap">
+ <div>
+  <h1 class="serif">Corte clássico. Acabamento de verdade.</h1>
+  <p class="lead">Barbearia premium com hora marcada, ambiente tranquilo e atenção a cada detalhe do seu corte e da sua barba.</p>
+  <div class="row"><a class="btn" href="#agendar">Agendar horário</a><a class="btn line" href="#servicos">Ver serviços</a></div>
+ </div>
+ <div class="pole" role="img" aria-label="Poste de barbeiro"></div>
+</div></section>
+
+<section id="servicos"><div class="wrap">
+ <h2 class="serif">Serviços</h2>
+ <p class="sub">Escolha o serviço e agende pelo WhatsApp em poucos toques.</p>
+ <div class="cards">
+  <article class="sv"><h3 class="serif">Corte clássico</h3><p>Máquina e tesoura, com finalização na navalha.</p><div class="pr serif"><small>R$</small><b>50</b></div><a class="go" href="#agendar">Agendar este serviço</a></article>
+  <article class="sv"><h3 class="serif">Barba completa</h3><p>Toalha quente, navalha e hidratação.</p><div class="pr serif"><small>R$</small><b>40</b></div><a class="go" href="#agendar">Agendar este serviço</a></article>
+  <article class="sv top"><span class="tag">Combo</span><h3 class="serif">Corte e barba</h3><p>O combinado completo, do corte ao acabamento.</p><div class="pr serif"><small>R$</small><b>80</b></div><a class="go" href="#agendar">Agendar este serviço</a></article>
+  <article class="sv"><h3 class="serif">Pigmentação e acabamento</h3><p>Contorno e definição das linhas.</p><div class="pr serif"><small>R$</small><b>30</b></div><a class="go" href="#agendar">Agendar este serviço</a></article>
+ </div>
+ <p class="note">Valores de exemplo para esta demonstração.</p>
+</div></section>
+
+<section id="depoimentos"><div class="wrap">
+ <h2 class="serif">O que os clientes dizem</h2>
+ <p class="sub">Espaço para depoimentos reais de clientes da barbearia.</p>
+ <div class="quotes">
+  <blockquote class="serif">“Atendimento pontual e um corte que dura. Saio sempre satisfeito.”<small>Depoimento de exemplo</small></blockquote>
+  <blockquote class="serif">“Ambiente tranquilo e barba feita com muito cuidado.”<small>Depoimento de exemplo</small></blockquote>
+  <blockquote class="serif">“Agendo pelo WhatsApp e não perco tempo esperando.”<small>Depoimento de exemplo</small></blockquote>
+ </div>
+</div></section>
+
+<section id="horarios"><div class="wrap">
+ <h2 class="serif">Horários e endereço</h2>
+ <p class="sub">Atendimento com hora marcada. Confira os dias e venha nos visitar.</p>
+ <div class="info">
+  <div class="box">
+   <h3 class="serif">Horário de atendimento</h3>
+   <ul class="hrs">
+    <li data-dia="1"><b>Segunda-feira</b><span>9h às 20h</span></li>
+    <li data-dia="2"><b>Terça-feira</b><span>9h às 20h</span></li>
+    <li data-dia="3"><b>Quarta-feira</b><span>9h às 20h</span></li>
+    <li data-dia="4"><b>Quinta-feira</b><span>9h às 20h</span></li>
+    <li data-dia="5"><b>Sexta-feira</b><span>9h às 20h</span></li>
+    <li data-dia="6"><b>Sábado</b><span>9h às 18h</span></li>
+    <li data-dia="0"><b>Domingo</b><span>Fechado</span></li>
+   </ul>
+  </div>
+  <div class="box loc">
+   <!-- Para usar um mapa real, troque este bloco pelo código de incorporação do Google Maps -->
+   <div class="mapa" role="img" aria-label="Espaço reservado para o mapa"><span class="pin"></span><small>Espaço para o mapa</small></div>
+   <address>Rua Exemplo, 123 — Centro<br>Sua Cidade / UF</address>
+   <div class="row">
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Exemplo+123+Sua+Cidade" target="_blank" rel="noopener">Como chegar</a>
+    <!-- Troque os números: 55 + DDD + número, sem espaços -->
+    <a class="btn line" href="https://wa.me/5500000000000" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn line" href="tel:+5500000000000">(00) 00000-0000</a>
+   </div>
+  </div>
+ </div>
+</div></section>
+
+<section id="faq"><div class="wrap">
+ <h2 class="serif">Dúvidas frequentes</h2>
+ <div class="faq" style="margin-top:32px">
+  <details><summary class="serif">Preciso agendar?</summary><p>O atendimento é com hora marcada, para você não esperar. Agende pelo WhatsApp.</p></details>
+  <details><summary class="serif">Posso remarcar meu horário?</summary><p>Pode. Avise com antecedência pelo WhatsApp e escolhemos um novo horário.</p></details>
+  <details><summary class="serif">Quais formas de pagamento?</summary><p>Informe aqui as formas de pagamento aceitas pela barbearia.</p></details>
+  <details><summary class="serif">Atendem crianças?</summary><p>Informe aqui se há atendimento infantil e as regras de agendamento.</p></details>
+ </div>
+</div></section>
+
+<section class="cta" id="agendar"><div class="wrap">
+ <h2 class="serif">Agende o seu horário.</h2>
+ <p>Chame no WhatsApp, escolha o serviço e o melhor horário.</p>
+ <div class="row">
+  <!-- Troque o número: 55 + DDD + número, sem espaços -->
+  <a class="btn" href="https://wa.me/5500000000000" target="_blank" rel="noopener">Agendar pelo WhatsApp</a>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Royal Barber Club</span><span>Conceito de demonstração criado pela WebVision</span></div></footer>
+<script src="barbearia.js"></script>
+</body>
+</html>

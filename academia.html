@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iron Pulse Academia | Musculação, funcional, spinning e lutas</title>
+<meta name="description" content="Iron Pulse Academia: musculação, funcional, spinning e lutas. Aula experimental grátis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0e0f12;--bg2:#15161a;--card:#1b1c21;--ink:#f4f4f0;--muted:#a4a5ad;--line:#2b2c33;--ac:#c6ff3d;--lime:#c6ff3d}
+.lt{--bg:#f3f3ef;--bg2:#f3f3ef;--card:#fff;--ink:#14151a;--muted:#5d5e66;--line:#dcdcd4;--ac:#4d7c0f}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:#0e0f12;color:#a4a5ad;font-family:Inter,system-ui,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.t,h1,h2,h3.t{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:1px;line-height:1}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}
+section{padding:80px 0;background:var(--bg);color:var(--muted)}
+h2{font-size:clamp(2.4rem,5vw,3.4rem);color:var(--ink);margin-bottom:8px}
+h2 span,.ac{color:var(--ac)}
+.lead{max-width:540px;margin-bottom:40px}
+.btn{display:inline-block;background:var(--lime);color:#111;padding:13px 26px;border-radius:6px;font-weight:700;font-size:15px;border:2px solid var(--lime);cursor:pointer;transition:background .2s}
+.btn:hover{background:#d8ff78;border-color:#d8ff78}
+.btn.o{background:transparent;color:var(--ink);border-color:#fff4}.btn.o:hover{background:#ffffff14;border-color:#fff}
+.lt .btn.o{border-color:#14151a55}.lt .btn.o:hover{background:#14151a0d;border-color:#14151a}
+.btn.sm{padding:9px 18px;font-size:14px}.row{display:flex;gap:12px;flex-wrap:wrap}
+
+.demo{background:#fff;color:#14151a;font-size:14px;font-weight:600;padding:9px 24px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center}
+.demo a{text-decoration:underline;text-underline-offset:3px}
+header{position:sticky;top:0;z-index:10;background:#0e0f12;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;height:66px;gap:28px}
+.logo{font-size:1.9rem;color:var(--lime)}
+.nav ul{display:flex;gap:24px;margin-left:auto;font-weight:600;font-size:14px;color:var(--ink)}
+.nav ul a:hover{color:var(--lime)}
+
+.hero{position:relative;overflow:hidden;background:#0e0f12;min-height:min(80vh,640px);display:flex;align-items:center}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(14,15,18,.92) 0%,rgba(14,15,18,.6) 55%,rgba(14,15,18,.2))}
+.hero svg.fb{position:absolute;right:8%;top:50%;translate:0 -50%;width:min(400px,38vw)}
+.bl{display:none}
+.hero.completo{min-height:0;aspect-ratio:16/6}
+.hero.completo:before,.hero.completo svg.fb,.hero.completo .wrap,.hero.completo>img:not(.full){display:none}
+.hero.completo .bl{display:block;position:absolute;inset:0;z-index:3}
+.lift{animation:lift 2.4s ease-in-out infinite}@keyframes lift{0%,100%{transform:translateY(20px)}50%{transform:translateY(-10px)}}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{color:#fff;font-size:clamp(3.2rem,9vw,6.4rem);margin-bottom:16px}
+.hero p{font-size:1.1rem;max-width:460px;margin-bottom:28px;color:#d4d4d8}
+.marquee{background:var(--lime);color:#111;overflow:hidden;white-space:nowrap;padding:10px 0;font-family:"Bebas Neue",sans-serif;font-size:1.4rem;letter-spacing:2px}
+.marquee div{display:inline-block;animation:sl 24s linear infinite}@keyframes sl{to{transform:translateX(-50%)}}
+
+.promos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.promo{position:relative;overflow:hidden;border-radius:10px;min-height:250px;display:flex;align-items:flex-end;color:#fff;background:var(--c)}
+.promo>img,.g img,.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.promo:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,15,18,.85),rgba(14,15,18,0) 70%)}
+.promo div{position:relative;z-index:1;padding:22px}.promo h3{font-size:2rem;color:#fff;margin-bottom:4px}.promo p{font-size:14px;color:#ddd;margin-bottom:12px}
+.promo b{color:var(--lime)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px 22px}
+.card h3{font-size:1.7rem;color:var(--ink);margin-bottom:6px}.card p{font-size:15px}
+.card.top{border-top:3px solid var(--ac)}
+.slot{border:2px dashed var(--ac);background:transparent;display:flex;flex-direction:column;justify-content:center}.slot h3{color:var(--ac)}
+
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:15px}
+th,td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--lime);font-weight:700;font-size:13px;background:var(--bg2)}td:first-child{color:var(--ink);font-weight:700}
+tr:last-child td{border-bottom:0}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.stats div+div{border-left:1px solid var(--line)}
+.stats b{display:block;font-family:"Bebas Neue",sans-serif;font-weight:400;font-size:clamp(2.8rem,6vw,4.2rem);color:var(--lime);line-height:1.1}
+
+.track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.track::-webkit-scrollbar{display:none}
+.sl{position:relative}
+.pro{flex:0 0 min(250px,78%);scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.ph{position:relative;aspect-ratio:4/5;background:#e5e5dd;display:grid;place-items:center;font-family:"Bebas Neue",sans-serif;font-size:4rem;color:#9a9a90}
+.pi{padding:16px 18px 20px}.pi h3{font-size:1.5rem;color:var(--ink)}.pi p{color:var(--ac);font-weight:700;font-size:14px;margin-bottom:14px}
+.sl-btn{position:absolute;top:calc(50% - 26px);z-index:2;width:52px;height:52px;border-radius:50%;border:0;background:#0e0f12;color:#fff;box-shadow:0 4px 16px #0004;display:grid;place-items:center;cursor:pointer;transition:background .2s,color .2s}
+.sl-btn:hover{background:var(--lime);color:#111}.sl-btn.l{left:-26px}.sl-btn.r{right:-26px}
+
+.plan{text-align:center}.plan.hot{border-color:var(--lime)}
+.pr{font-family:"Bebas Neue",sans-serif;font-size:3.4rem;color:var(--lime);line-height:1;margin:8px 0}.pr small{font-family:Inter,sans-serif;font-size:1rem;color:var(--muted)}
+.plan ul{margin:14px 0 22px;font-size:15px}.plan li{padding:7px 0;border-bottom:1px solid var(--line)}
+.plan .tag{display:inline-block;background:var(--lime);color:#111;font-size:12px;font-weight:700;padding:3px 12px;border-radius:99px;margin-bottom:6px}
+
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.g{position:relative;margin:0;aspect-ratio:4/3;background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden;display:grid;place-items:center;font-size:14px;text-align:center;padding:12px}
+
+.place{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;align-items:center}
+.info li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}.info b{display:block;color:var(--ink)}
+.map{border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:340px}.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+.final{text-align:center;background:var(--bg2)}.final .lead{margin:0 auto 24px}
+footer{background:#0e0f12;border-top:1px solid var(--line);padding:26px 24px;font-size:14px;text-align:center}footer a{text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:1180px){.sl-btn.l{left:8px}.sl-btn.r{right:8px}.sl-btn{width:44px;height:44px}}
+@media(max-width:860px){
+ section{padding:60px 0}.promos,.place{grid-template-columns:1fr}.place{gap:32px}.gal{grid-template-columns:1fr 1fr}
+ .stats{grid-template-columns:1fr 1fr;gap:24px 0}.stats div:nth-child(3){border-left:0}
+ .hero.completo{aspect-ratio:4/3}
+ .nav ul{display:none}.nav .btn{margin-left:auto}.hero{min-height:480px}.hero svg.fb{display:none}
+}
+@media(prefers-reduced-motion:reduce){.lift,.marquee div{animation:none}}
+</style>
+</head>
+<body>
+<div class="demo"><span>Coloque sua academia aqui. Este é um projeto de demonstração.</span><a href="../index.html#contato">Solicitar orçamento do meu site</a></div>
+
+<header><div class="wrap nav">
+ <a class="logo t" href="#">Iron Pulse</a>
+ <ul><li><a href="#modalidades">Modalidades</a></li><li><a href="#horarios">Horários</a></li><li><a href="#professores">Professores</a></li><li><a href="#planos">Planos</a></li><li><a href="#lugar">Onde estamos</a></li></ul>
+ <a class="btn sm" href="#" data-wa="Olá! Quero agendar minha aula experimental grátis.">Aula grátis</a>
+</div></header>
+
+<main>
+<div class="hero">
+ <img class="full" src="img/banner-topo.jpg" alt="Iron Pulse Academia: aula experimental grátis" onload="this.parentNode.classList.add('completo')" onerror="this.remove()">
+ <a class="bl" href="#" data-wa="Olá! Quero agendar minha aula experimental grátis." aria-label="Agendar aula experimental grátis"></a>
+ <img src="img/academia.jpg" alt="Estrutura da academia" onerror="this.remove()">
+ <svg class="fb" viewBox="0 0 320 240" aria-hidden="true"><g class="lift"><rect x="60" y="112" width="200" height="14" rx="7" fill="#9a9aa5"/><rect x="46" y="66" width="22" height="106" rx="6" fill="#c6ff3d"/><rect x="26" y="82" width="20" height="74" rx="6" fill="#fff"/><rect x="252" y="66" width="22" height="106" rx="6" fill="#c6ff3d"/><rect x="274" y="82" width="20" height="74" rx="6" fill="#fff"/></g></svg>
+ <div class="wrap">
+  <h1>Seu corpo.<br><span class="ac" style="color:var(--lime)">Sua evolução.</span><br>Sem desculpas.</h1>
+  <p>Estrutura completa, professores dedicados e treinos que se adaptam ao seu objetivo. Comece hoje com uma aula experimental grátis.</p>
+  <div class="row"><a class="btn" href="#" data-wa="Olá! Quero agendar minha aula experimental grátis.">Quero minha aula grátis</a><a class="btn o" href="#planos">Ver planos</a></div>
+ </div>
+</div>
+<div class="marquee"><div>MUSCULAÇÃO • FUNCIONAL • SPINNING • LUTAS • AVALIAÇÃO FÍSICA • MUSCULAÇÃO • FUNCIONAL • SPINNING • LUTAS • AVALIAÇÃO FÍSICA •</div></div>
+
+<section style="padding-bottom:0"><div class="wrap promos">
+ <a class="promo" href="#" data-wa="Olá! Quero a aula experimental grátis." style="--c:#2a2b31"><img src="img/banner-aula.jpg" alt="" onerror="this.remove()"><div><h3 class="t">Aula experimental</h3><p>Conheça a estrutura sem compromisso.</p><b>Grátis</b></div></a>
+ <a class="promo" href="#" data-wa="Olá! Quero saber sobre a matrícula sem taxa." style="--c:#35383f"><img src="img/banner-matricula.jpg" alt="" onerror="this.remove()"><div><h3 class="t">Matrícula sem taxa</h3><p>Válido para novos alunos neste mês.</p><b>Sem taxa de adesão</b></div></a>
+ <a class="promo" href="#" data-wa="Olá! Quero saber sobre o plano anual." style="--c:#2a2b31"><img src="img/banner-anual.jpg" alt="" onerror="this.remove()"><div><h3 class="t">Plano anual</h3><p>O melhor preço, com lutas incluídas.</p><b>R$ 79 por mês</b></div></a>
+</div></section>
+
+<section id="modalidades" class="lt" style="margin-top:80px"><div class="wrap">
+ <h2 class="t">Escolha seu <span>treino</span></h2>
+ <p class="lead">Modelo de exemplo: personalize com as modalidades da sua academia.</p>
+ <div class="grid">
+  <article class="card top"><h3 class="t">Musculação</h3><p>Equipamentos modernos e acompanhamento de professores.</p></article>
+  <article class="card top"><h3 class="t">Funcional</h3><p>Treinos dinâmicos para força, resistência e mobilidade.</p></article>
+  <article class="card top"><h3 class="t">Spinning</h3><p>Aulas em grupo com muita energia e música.</p></article>
+  <article class="card top"><h3 class="t">Lutas</h3><p>Muay thai e boxe para condicionamento e defesa.</p></article>
+  <article class="card slot"><h3 class="t">Suas modalidades aqui</h3><p>Nome e descrição do seu jeito.</p></article>
+ </div>
+</div></section>
+
+<section id="horarios"><div class="wrap">
+ <h2 class="t">Grade de <span>horários</span></h2>
+ <p class="lead">Aulas coletivas da semana. A musculação é livre das 6h às 22h.</p>
+ <div class="tbl"><table>
+  <tr><th>Horário</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th></tr>
+  <tr><td>06h</td><td>Funcional</td><td>Spinning</td><td>Funcional</td><td>Spinning</td><td>Funcional</td></tr>
+  <tr><td>08h</td><td>Spinning</td><td>Funcional</td><td>Spinning</td><td>Funcional</td><td>Spinning</td></tr>
+  <tr><td>18h</td><td>Muay thai</td><td>Funcional</td><td>Muay thai</td><td>Funcional</td><td>Boxe</td></tr>
+  <tr><td>19h</td><td>Spinning</td><td>Boxe</td><td>Spinning</td><td>Boxe</td><td>Spinning</td></tr>
+  <tr><td>20h</td><td>Funcional</td><td>Muay thai</td><td>Funcional</td><td>Muay thai</td><td>Funcional</td></tr>
+ </table></div>
+</div></section>
+
+<section style="padding:0 0 80px"><div class="wrap"><div class="stats" id="stats">
+ <div><b data-n="3500" data-s="+">0</b>Alunos ativos</div><div><b data-n="10" data-s="">0</b>Anos de experiência</div>
+ <div><b data-n="25" data-s="">0</b>Professores</div><div><b data-n="96" data-s="%">0</b>Satisfação</div>
+</div></div></section>
+
+<section id="professores" class="lt"><div class="wrap">
+ <h2 class="t">Nossos <span>professores</span></h2>
+ <p class="lead">Quem acompanha o seu treino de perto.</p>
+ <div class="sl">
+  <div class="track" id="track" tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Professores">
+   <article class="pro"><div class="ph">LA<img src="img/prof-lucas.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3 class="t">Lucas Andrade</h3><p>Musculação</p><a class="btn sm" href="#" data-wa="Olá! Quero treinar com o professor Lucas Andrade.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">CM<img src="img/prof-carla.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3 class="t">Carla Mendes</h3><p>Funcional</p><a class="btn sm" href="#" data-wa="Olá! Quero treinar com a professora Carla Mendes.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">DR<img src="img/prof-diego.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3 class="t">Diego Rocha</h3><p>Spinning</p><a class="btn sm" href="#" data-wa="Olá! Quero treinar com o professor Diego Rocha.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">TS<img src="img/prof-thiago.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3 class="t">Thiago Silva</h3><p>Muay thai</p><a class="btn sm" href="#" data-wa="Olá! Quero treinar com o professor Thiago Silva.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">JC<img src="img/prof-juliana.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3 class="t">Juliana Costa</h3><p>Avaliação física</p><a class="btn sm" href="#" data-wa="Olá! Quero marcar avaliação física com a professora Juliana Costa.">Agendar</a></div></article>
+   <article class="pro"><div class="ph">BA<img src="img/prof-bruno.jpg" alt="" onerror="this.remove()"></div><div class="pi"><h3 class="t">Bruno Alves</h3><p>Boxe</p><a class="btn sm" href="#" data-wa="Olá! Quero treinar com o professor Bruno Alves.">Agendar</a></div></article>
+  </div>
+  <button type="button" class="sl-btn l" id="prev" aria-label="Professor anterior"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+  <button type="button" class="sl-btn r" id="next" aria-label="Próximo professor"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+ </div>
+</div></section>
+
+<section id="planos"><div class="wrap">
+ <h2 class="t">Planos que cabem no <span>seu bolso</span></h2>
+ <p class="lead">Sem taxa de adesão e sem fidelidade abusiva.</p>
+ <div class="grid">
+  <article class="card plan"><h3 class="t">Mensal</h3><div class="pr">R$ 119<small>/mês</small></div><ul><li>Musculação livre</li><li>Avaliação física</li><li>Acesso das 6h às 22h</li></ul><a class="btn o" href="#" data-wa="Olá! Quero o plano Mensal.">Escolher</a></article>
+  <article class="card plan hot"><span class="tag">Mais popular</span><h3 class="t">Trimestral</h3><div class="pr">R$ 99<small>/mês</small></div><ul><li>Musculação e aulas coletivas</li><li>Avaliação física</li><li>Acesso das 6h às 22h</li></ul><a class="btn" href="#" data-wa="Olá! Quero o plano Trimestral.">Escolher</a></article>
+  <article class="card plan"><h3 class="t">Anual</h3><div class="pr">R$ 79<small>/mês</small></div><ul><li>Tudo do Trimestral</li><li>Lutas incluídas</li><li>1 convidado por mês</li></ul><a class="btn o" href="#" data-wa="Olá! Quero o plano Anual.">Escolher</a></article>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <h2 class="t">Nossa <span>estrutura</span></h2>
+ <p class="lead">Espaço amplo, equipamentos novos e ambiente que motiva.</p>
+ <div class="gal">
+  <figure class="g"><img src="img/galeria-1.jpg" alt="" onerror="this.remove()"><span>Foto da estrutura</span></figure><figure class="g"><img src="img/galeria-2.jpg" alt="" onerror="this.remove()"><span>Foto da estrutura</span></figure><figure class="g"><img src="img/galeria-3.jpg" alt="" onerror="this.remove()"><span>Foto da estrutura</span></figure>
+  <figure class="g"><img src="img/galeria-4.jpg" alt="" onerror="this.remove()"><span>Foto da estrutura</span></figure><figure class="g"><img src="img/galeria-5.jpg" alt="" onerror="this.remove()"><span>Foto da estrutura</span></figure><figure class="g"><img src="img/galeria-6.jpg" alt="" onerror="this.remove()"><span>Foto da estrutura</span></figure>
+ </div>
+</div></section>
+
+<section id="lugar" class="lt"><div class="wrap place">
+ <div>
+  <h2 class="t">Onde <span>estamos</span></h2>
+  <p class="lead" style="margin-bottom:20px">Venha conhecer a academia e fazer sua aula grátis.</p>
+  <ul class="info"><li><b>Endereço</b>Av. Paulista, 1000, Bela Vista, São Paulo</li><li><b>Horário</b>Segunda a sexta, das 6h às 22h. Sábado, das 8h às 14h</li><li><b>Telefone</b>(00) 0000-0000</li></ul>
+  <div class="row" style="margin-top:24px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Av.+Paulista+1000+Sao+Paulo">Como chegar</a><a class="btn o" href="#" data-wa="Olá! Quero agendar minha aula experimental grátis.">Chamar no WhatsApp</a></div>
+ </div>
+ <div class="map"><iframe title="Mapa da academia" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Av.+Paulista+1000+Sao+Paulo&output=embed"></iframe></div>
+</div></section>
+
+<section class="final"><div class="wrap">
+ <h2 class="t">Sua primeira aula é <span style="color:var(--lime)">por nossa conta</span></h2>
+ <p class="lead">Agende agora pelo WhatsApp e conheça a estrutura sem compromisso.</p>
+ <a class="btn" href="#" data-wa="Olá! Quero agendar minha aula experimental grátis.">Agendar aula grátis</a>
+</div></section>
+</main>
+
+<footer>Iron Pulse Academia. <a href="../index.html#contato">Projeto de demonstração. Quero um site assim</a></footer>
+
+<script>
+var WHATSAPP="5500000000000"; // troque pelo número da academia: 55 + DDD + número, sem espaços
+document.querySelectorAll("[data-wa]").forEach(function(a){a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+
+// números contam conforme você rola até eles
+var nums=document.querySelectorAll("[data-n]"),box=document.getElementById("stats");
+function contar(){
+ var r=box.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight-r.top)/(innerHeight*.7)));
+ nums.forEach(function(el){var n=+el.dataset.n;el.textContent=Math.round(n*p).toLocaleString("pt-BR")+(p===1?el.dataset.s:"")});
+}
+addEventListener("scroll",contar,{passive:true});addEventListener("resize",contar);contar();
+
+// professores: banners que passam sozinhos (pausam ao passar o mouse ou tocar)
+var tr=document.getElementById("track"),auto,reduz=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function mover(d){
+ var passo=tr.querySelector(".pro").offsetWidth+20,max=tr.scrollWidth-tr.clientWidth,alvo=tr.scrollLeft+d*passo;
+ if(alvo>max+4)alvo=0;else if(alvo<-4)alvo=max;
+ tr.scrollTo({left:alvo,behavior:"smooth"});
+}
+function parar(){clearInterval(auto)}
+function tocar(){if(reduz)return;parar();auto=setInterval(function(){mover(1)},3500)}
+document.getElementById("prev").onclick=function(){mover(-1)};
+document.getElementById("next").onclick=function(){mover(1)};
+["mouseenter","focusin","touchstart"].forEach(function(e){tr.parentNode.addEventListener(e,parar,{passive:true})});
+["mouseleave","focusout","touchend"].forEach(function(e){tr.parentNode.addEventListener(e,tocar,{passive:true})});
+tocar();
+</script>
+</body>
+</html>

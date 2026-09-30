@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brasa Burger | Hamburgueria artesanal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff9f0;--ink:#2b1a12;--muted:#6e5646;--red:#c62828;--amber:#f2a33a;--line:#ecdcc4;--card:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{background:var(--bg);color:var(--muted);font-family:Nunito,system-ui,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.title,h1,h2,h3.t{font-family:"Bebas Neue",Impact,sans-serif;font-weight:400;letter-spacing:1px;color:var(--ink);line-height:1}
+.wrap{max-width:1100px;margin:auto;padding:0 24px}
+.btn{display:inline-block;background:var(--red);color:#fff;padding:13px 26px;border-radius:8px;font-weight:800;font-size:15px;border:1.5px solid var(--red);transition:background .2s}
+.btn:hover{background:#a81f1f}
+.btn.out{background:transparent;border-color:#fff}.btn.out:hover{background:#fff;color:var(--ink)}
+.btn.sm{padding:9px 18px;font-size:14px}
+
+.demo{background:var(--ink);color:#fff;font-size:14px;font-weight:700;padding:9px 24px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;text-align:center}
+.demo a{color:var(--amber);text-decoration:underline;text-underline-offset:3px}
+header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;height:66px;gap:28px}
+.logo{font-size:2rem;color:var(--red)}
+.nav ul{display:flex;gap:26px;margin-left:auto;list-style:none;font-weight:800;font-size:15px;color:var(--ink)}
+.nav ul a:hover{color:var(--red)}
+
+.hero{position:relative;overflow:hidden;background:#2b1a12;min-height:min(78vh,620px);display:flex;align-items:center;color:#f1e3d0}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(28,15,9,.88) 0%,rgba(28,15,9,.55) 55%,rgba(28,15,9,.1))}
+.hero svg.fb{position:absolute;right:8%;top:50%;translate:0 -50%;width:min(380px,36vw);height:auto}
+.hero .wrap{position:relative;z-index:2;width:100%}
+.hero h1{color:#fff;font-size:clamp(3.2rem,8vw,6rem);margin-bottom:16px}
+.hero h1 span{color:var(--amber)}
+.hero p{font-size:1.15rem;max-width:440px;margin-bottom:28px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+
+.marquee{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;padding:12px 0;font-weight:800;font-size:15px}
+.marquee div{display:inline-block;animation:slide 28s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+section{padding:72px 0}
+h2{font-size:clamp(2.3rem,4vw,3rem);margin-bottom:8px}
+.lead{max-width:520px;margin-bottom:36px}
+.promos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.promo{position:relative;overflow:hidden;border-radius:14px;min-height:260px;display:flex;align-items:flex-end;color:#fff;background:var(--c)}
+.promo>img,.wide>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.promo:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(28,15,9,.78),rgba(28,15,9,0) 70%)}
+.promo div{position:relative;z-index:1;padding:22px;width:100%}
+.promo h3{font-size:2rem;color:#fff}
+.promo p{font-size:14px;color:#f1e3d0;margin:4px 0 12px}
+.promo .pr{font-size:1.15rem;font-weight:800;color:#fff}.promo .pr s{font-weight:400;opacity:.7;margin-right:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center}
+.card svg{width:130px;height:114px}
+.card h3{font-size:1.2rem;margin:8px 0 4px;color:var(--ink);font-family:Nunito,sans-serif;font-weight:800}
+.card p{font-size:14px;line-height:1.5;margin-bottom:10px}
+.price{color:var(--red);font-weight:800;font-size:1.2rem}
+.slot{border:2px dashed var(--red);background:transparent;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px}
+.slot b{color:var(--red);font-size:1.05rem}
+.wide{position:relative;overflow:hidden;border-radius:18px;min-height:250px;background:var(--red);color:#fff;display:flex;align-items:center}
+.wide:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(28,15,9,.8),rgba(28,15,9,0) 75%)}
+.wide div{position:relative;z-index:2;padding:40px;max-width:540px}
+.wide h2{color:#fff}.wide p{margin-bottom:20px;color:#f1e3d0}
+.wide .btn{background:#fff;color:var(--red);border-color:#fff}.wide .btn:hover{background:var(--amber);border-color:var(--amber)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.steps li{list-style:none;padding:26px 26px 26px 0;border-bottom:1px solid var(--line)}
+.steps li:not(:first-child){padding-left:26px;border-left:1px solid var(--line)}
+.steps b{display:block;color:var(--ink);font-size:1.1rem}
+.wa{background:var(--ink);color:#d9c8b4;text-align:center;padding:64px 24px}
+.wa h2{color:#fff}.wa p{margin-bottom:22px}
+footer{padding:26px 24px;font-size:14px;text-align:center}
+footer a{text-decoration:underline;text-underline-offset:3px}
+
+.place{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.info{list-style:none;margin-bottom:24px}.info li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}.info b{display:block;color:var(--ink)}
+.map{min-height:300px;border-radius:14px;border:1px solid var(--line);background:#f3e6d2;display:grid;place-content:center;justify-items:center;gap:10px;text-align:center;font-weight:700;padding:24px}
+@media(max-width:860px){
+ .promos,.steps,.place{grid-template-columns:1fr}
+ .place{gap:32px}
+ .steps li,.steps li:not(:first-child){padding:20px 0;border-left:0}
+ .nav ul{display:none}.nav .btn{margin-left:auto}
+ .hero{min-height:480px}.hero svg.fb{display:none}
+ .wide div{padding:28px 24px}section{padding:56px 0}
+}
+@media(prefers-reduced-motion:reduce){.marquee div{animation:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="burger" viewBox="0 0 160 140">
+<ellipse cx="80" cy="134" rx="56" ry="5" fill="#000" opacity=".15"/>
+<path d="M18 118q0 14 16 14h92q16 0 16-14z" fill="#e0952f" stroke="#2b1a12" stroke-width="3"/>
+<rect x="14" y="92" width="132" height="24" rx="12" fill="var(--p,#5a2d1a)" stroke="#2b1a12" stroke-width="3"/>
+<path d="M12 82q10 12 22 0q10 12 22 0q10 12 22 0q10 12 22 0q10 12 22 0q10 12 22 0v6H12z" fill="var(--l,#6bb84a)" stroke="#2b1a12" stroke-width="3" stroke-linejoin="round"/>
+<path d="M20 72h120l-16 22-14-12-16 16-16-16-16 12-14-10z" fill="var(--c,#fcbf49)" stroke="#2b1a12" stroke-width="3" stroke-linejoin="round"/>
+<path d="M16 66q0-52 64-52t64 52z" fill="#f0a740" stroke="#2b1a12" stroke-width="3"/>
+<g fill="#fff3d0"><ellipse cx="60" cy="38" rx="5" ry="2.6" transform="rotate(-20 60 38)"/><ellipse cx="88" cy="30" rx="5" ry="2.6"/><ellipse cx="108" cy="46" rx="5" ry="2.6" transform="rotate(25 108 46)"/><ellipse cx="76" cy="54" rx="5" ry="2.6" transform="rotate(10 76 54)"/><ellipse cx="42" cy="54" rx="5" ry="2.6" transform="rotate(-30 42 54)"/></g>
+</symbol>
+</defs></svg>
+
+<div class="demo"><span>Coloque seu produto aqui. Este é um projeto de demonstração.</span><a href="../index.html#contato">Solicitar orçamento do meu site</a></div>
+
+<header><div class="wrap nav">
+ <a class="logo title" href="#">Brasa Burger</a>
+ <ul><li><a href="#promos">Promoções</a></li><li><a href="#cardapio">Cardápio</a></li><li><a href="#delivery">Delivery</a></li><li><a href="#lugar">Onde estamos</a></li></ul>
+ <a class="btn sm" href="#" data-wa="Olá! Quero fazer um pedido.">Pedir agora</a>
+</div></header>
+
+<main>
+<div class="hero" id="hero">
+ <img src="img/produto.jpg" alt="Hambúrguer em destaque" onerror="this.remove()">
+ <svg class="fb" aria-hidden="true"><use href="#burger"/></svg>
+ <div class="wrap">
+  <h1>O hambúrguer que <span>pega fogo</span> no paladar</h1>
+  <p>Artesanal, feito na chapa e entregue quentinho.</p>
+  <div class="row"><a class="btn" href="#cardapio">Ver cardápio</a><a class="btn out" href="#" data-wa="Olá! Quero fazer um pedido.">Pedir agora</a></div>
+ </div>
+</div>
+
+<div class="marquee"><div>Combo em dobro &nbsp;•&nbsp; Batata grátis às terças &nbsp;•&nbsp; Delivery rápido &nbsp;•&nbsp; Carne na brasa &nbsp;•&nbsp; Combo em dobro &nbsp;•&nbsp; Batata grátis às terças &nbsp;•&nbsp; Delivery rápido &nbsp;•&nbsp; Carne na brasa &nbsp;•&nbsp;</div></div>
+
+<section id="promos"><div class="wrap">
+ <h2>Promoções do dia</h2>
+ <p class="lead">Aproveite antes que acabe.</p>
+ <div class="promos">
+  <a class="promo" href="#" data-wa="Olá! Quero o Combo Clássico por R$ 29,90." style="--c:#c62828"><img src="img/banner-combo.jpg" alt="" onerror="this.remove()"><div><h3 class="t">Combo Clássico</h3><p>Burger, batata e refri.</p><span class="pr"><s>R$ 39,90</s>R$ 29,90</span></div></a>
+  <a class="promo" href="#" data-wa="Olá! Quero a promoção Dobro de Bacon." style="--c:#2b1a12"><img src="img/banner-bacon.jpg" alt="" onerror="this.remove()"><div><h3 class="t">Dobro de Bacon</h3><p>Leve dois, pague um às quartas.</p><span class="pr"><s>R$ 68,00</s>R$ 34,00</span></div></a>
+  <a class="promo" href="../index.html#contato" style="--c:#8a5a3c"><img src="img/banner-eventos.jpg" alt="" onerror="this.remove()"><div><h3 class="t">Eventos e empresas</h3><p>Hambúrguer para festas e confraternizações.</p><span class="pr">Solicitar orçamento</span></div></a>
+ </div>
+</div></section>
+
+<section id="cardapio" style="padding-top:0"><div class="wrap">
+ <h2>Cardápio</h2>
+ <p class="lead">Modelo de exemplo: é só trocar pelos produtos da sua loja.</p>
+ <div class="grid">
+  <article class="card"><svg><use href="#burger"/></svg><h3>Brasa Clássico</h3><p>Blend 160g, queijo, alface e molho da casa.</p><span class="price">R$ 27,90</span></article>
+  <article class="card"><svg style="--p:#3a1a10;--c:#fff;--l:#8ccf5a"><use href="#burger"/></svg><h3>Bacon Crocante</h3><p>Bacon em tiras, cheddar e cebola caramelizada.</p><span class="price">R$ 32,90</span></article>
+  <article class="card"><svg style="--p:#6b3320;--c:#f7a52a;--l:#4e9b3a"><use href="#burger"/></svg><h3>Duplo Cheddar</h3><p>Dois blends de 120g e muito cheddar.</p><span class="price">R$ 36,90</span></article>
+  <article class="card slot"><b>Aqui você pode colocar seus produtos</b><p>Foto, nome, descrição e preço do seu jeito.</p></article>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <div class="wide"><img src="img/banner-largo.jpg" alt="" onerror="this.remove()"><div><h2>Monte o seu combo</h2><p>Escolha o burger, a batata e a bebida. Combo completo a partir de R$ 29,90.</p><a class="btn" href="#" data-wa="Olá! Quero montar o meu combo.">Quero o meu</a></div></div>
+</div></section>
+
+<section id="delivery" style="padding-top:0"><div class="wrap">
+ <h2>Delivery rápido</h2>
+ <p class="lead">Do pedido à sua porta em poucos minutos.</p>
+ <ol class="steps">
+  <li><b>1. Escolha</b>Monte seu pedido no cardápio.</li>
+  <li><b>2. Peça no WhatsApp</b>Um clique e o pedido chega até nós.</li>
+  <li><b>3. Receba quentinho</b>Entrega média de 40 minutos.</li>
+ </ol>
+</div></section>
+
+<section id="lugar"><div class="wrap place">
+ <div>
+  <h2>Onde estamos</h2>
+  <p class="lead" style="margin-bottom:20px">Venha comer na loja ou peça para entregar.</p>
+  <ul class="info"><li><b>Endereço</b>Rua das Brasas, 250, Centro</li><li><b>Horário</b>Todos os dias, das 18h às 23h30</li><li><b>Delivery</b>Bairros em até 5 km da loja</li></ul>
+  <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rua+das+Brasas+250+Centro">Como chegar</a>
+ </div>
+ <div class="map" role="img" aria-label="Espaço para o mapa da loja"><svg width="36" height="44" viewBox="0 0 24 30" fill="none" stroke="#c62828" stroke-width="2"><path d="M12 29s9-8.5 9-16a9 9 0 1 0-18 0c0 7.5 9 16 9 16z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Aqui entra o mapa da sua loja</span></div>
+</div></section>
+
+<div class="wa" id="whatsapp">
+ <h2>Faça seu pedido pelo WhatsApp</h2>
+ <p>Atendimento todos os dias, das 18h às 23h30.</p>
+ <a class="btn" href="#" data-wa="Olá! Vim pelo site e gostaria de fazer um pedido.">Chamar no WhatsApp</a>
+</div>
+</main>
+
+<footer>Brasa Burger. <a href="../index.html#contato">Projeto de demonstração. Quero um site assim</a></footer>
+<script>
+var WHATSAPP="5500000000000"; // troque pelo número da loja: 55 + DDD + número, sem espaços
+document.querySelectorAll("[data-wa]").forEach(function(a){a.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(a.dataset.wa);a.target="_blank";a.rel="noopener"});
+</script>
+</body>
+</html>
